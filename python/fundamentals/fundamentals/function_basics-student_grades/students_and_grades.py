@@ -15,13 +15,15 @@ def studentInput():
             x = input("Student Name:")
             if x == "":
                 print("Name required, try again")
-        # while isinstance(y, int) == False:
-            y = input("Student Grade")
-            # if isinstance(y, int) == False:
-            #     print("Must be a numeric number")
+        while y.isdecimal() == False:
+            print("Student Grade:")
+            y = input()
+            if y.isdecimal() == False:
+                print("Must be a numeric number")
         while z != "1" or z != "2" or z != "3":
             z = input("Select a course 1 - MATH, 2 - SCIENCE, 3 - HISTORY")
-            if z != "1" or z != "2" or z != "3":
+            if z == "1" or z == "2" or z == "3":
+                break
                 print("Must be 1 - 3")
         if z == "1":
             z = "MATH"
@@ -40,7 +42,7 @@ studentInput()
         # studentStr += str(', '.join(studentList[i])) 
         # studentStr += " || "
         # # globals()[f"tempvar{i}"] = f"Name: {x} Grade: {y} Class {z}"
-        # globals()[f"tempvar{i}"] = str(', '.join(studentList[i]))2
+        # globals()[f"tempvar{i}"] = str(', '.join(studentList[i]))
     # for k in range(0, int(studentNum)):
     #     print(f"tempvar{k}")
      
