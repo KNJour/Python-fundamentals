@@ -23,7 +23,7 @@ class Dojo:
     def display_students(self):
         for student in self.num_of_students:
             print(f"Student Name: {student.name}, Student Grade: {student.grade}")
-            return self
+        return self
     def update_grade(self, student, new_grade):
         student.grade = new_grade
         return self
@@ -36,8 +36,10 @@ course1 = Dojo("Crime fighting class", 3, "Superman")
 
 course1.add_student(student1)
 course1.add_student(student2)
+course1.add_student(student3)
+
 course1.display_students()
 
-course1.update_grade(student1, 70)
-course1.display_students()
+# course1.update_grade(student1, 70)
+
 print 
