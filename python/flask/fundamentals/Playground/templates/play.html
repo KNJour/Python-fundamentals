@@ -15,7 +15,10 @@
 body {
     margin: 0 auto;
     display:flex;
+    flex-wrap:wrap;
     align-items: center;
+    width: 100%;
+    height:100vh;
 
     }
 .box {
@@ -28,8 +31,8 @@ body {
     </style>
 </head>
 <body>
+    {% for i in range(x):%}
     <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    {% endfor %}
 </body>
 </html>
