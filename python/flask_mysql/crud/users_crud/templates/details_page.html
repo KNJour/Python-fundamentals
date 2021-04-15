@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <a href="/" class="btn btn-info btn-outline-danger" >Return Home</a>
+    <td><a href="/edit/{{user['id']}}" class="btn btn-info btn-outline-warning m-1" >Edit</a></td>
+    <div class="d-flex justify-content-around flex-wrap p-5">
+        <div class="card col-3 bg-dark text-light m-1">
+            <div class="card-body">
+                <p class="card-title text-primary">Name: {{user["first_name"]}} {{user["last_name"]}}</p>
+            </div>
+            <div class="card-footer bg-light text-dark">
+                <p class="card-text">Email: {{user["email"]}}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

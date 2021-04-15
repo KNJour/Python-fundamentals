@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Users!</title>
+</head>
+
+<body class="align-items-center">
+
+        <div class="d-flex justify-content-around flex-wrap p-5">
+            <div class="card col-10 bg-dark text-light m-1">
+                <div class="card-header">        <a href="/newUser" class="btn btn-info btn-light text-dark" width="100%" >Create User</a></div>
+                <div class="card-body">
+            <table >
+                <tr>
+                  <th>Name</th>
+                  <th>email</th>
+                  <th>Changes</th>
+                </tr>
+                {% for one_user in all_users %}
+                <tr>
+                  <td class="text-primary">{{one_user["first_name"]}} {{one_user["last_name"]}}</td>
+                  <td class="text-primary">{{one_user["email"]}}</td>
+                  <td><a href="/edit/{{one_user['id']}}" class="btn btn-info btn-outline-warning m-1" >Edit</a></td>
+                  <td><a href="/delete/{{one_user['id']}}" class="btn btn-info btn-outline-danger m-1" >Delete</a></td>
+                  <td><a href="/show/{{one_user['id']}}" class="btn btn-info btn-outline-primary sm" >Show</a></td>
+                </tr>
+                {% endfor %}
+              </table>
+
+        </div>
+        </div>
+        </div>
+  
+</body>
+</html>
