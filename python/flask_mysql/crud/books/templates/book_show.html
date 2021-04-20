@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Show Book</title>
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-4 col-md-offset-3">
+        <br>
+        <div class="panel panel-primary ">
+            <div class="panel-heading text-center">
+                 <h1>Title: {{book_name[0]['name']}}</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Favorited By:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for one_favorite in authorFavorites %}
+                      <tr>
+                        <td>{{one_favorite["author_name"]}}</td>
+                      </tr>
+                      {% endfor%}
+                    </tbody>
+                  </table>
+            
+            </div>
+            <div class="panel-footer text-center">
+                
+            </div>
+
+        </div>
+
+    </div>
+    <div class="navbar p-3 mb-2 bg-dark text-white"></div>
+<div class="container-md">
+    <div class="row gx-5">
+        <div class="col-4">
+            <div class="card w-150">
+                <h1 class="card-header">Add Book's Favorite</h1>
+                <div class="card-body ">
+                    <form action="/add_favorite_from_books" method="post">
+                        <label for="books">Author:</label>
+                        <select type="sel" name="author" id="book" class="form-control" >
+                            {% for each_author in authors %}
+                            <option text-dark value={{each_author["id"]}}>{{each_author["name"]}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" id="book-id" name="id" value="{{book_name[0]['id']}}">
+                    <br>
+                            <input type="submit" value="Add" class="btn btn-outline-dark">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+        <a href="/books" class="btn btn-outline-dark">To books</a>
+</div>
+
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Add Ninja</title>
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-4 col-md-offset-3">
+        <br>
+        <div class="panel panel-primary ">
+            <div class="panel-heading text-center">
+                 <h1>{{ninjas[0]['name']}} DOJO</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for one_ninja in ninjas %}
+                      <tr>
+                          <!-- <td>{{one_ninja["name"]}}</td> -->
+                        <td>{{one_ninja["first_name"]}}</td>
+                        <td>{{one_ninja["last_name"]}}</td>
+                        <td>{{one_ninja["age"]}}</td>
+                      </tr>
+                      {% endfor%}
+                    </tbody>
+                  </table>
+            
+            </div>
+            <div class="panel-footer text-center">
+                <input type="submit" value="Add User" class="btn btn-primary btn-outline-dark">
+            </div>
+
+        </div>
+        <a href="/" class="btn btn-outline-dark">Return to Dojos</a>
+    </div>
+</div>
+
+    
+</body>
+</html>

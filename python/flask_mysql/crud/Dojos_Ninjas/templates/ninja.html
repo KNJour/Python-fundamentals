@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Add Ninja</title>
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-4 col-md-offset-3">
+        <br>
+        <div class="panel panel-primary ">
+            <div class="panel-heading text-center">
+                 <h1>Add Ninja</h1>
+            </div>
+            <div class="panel-body">
+                <form action="/create_ninja" method="post">
+                    <div class="form-group">
+                        <label for="dojo">Dojo</label>
+                        <select type="sel" name="dojo" id="dojo" class="form-control" >
+                            {% for each_dojo in dojos %}
+                            <option text-dark value={{each_dojo["id"]}}>{{each_dojo["name"]}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" id="name" class="form-control">
+                        <br>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" id="last_name" class="form-control">
+                        <br>
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" class="form-control">
+                        </div>
+                        
+                        </div>
+                    <div class="panel-footer text-center">
+                        <input type="submit" value="Add Ninja" class="btn btn-primary btn-outline-dark">
+                    </div>
+                </form>
+
+        </div>
+        <a href="/" class="btn btn-outline-dark">Return to Dojos</a>
+    </div>
+</div>
+
+    
+</body>
+</html>
